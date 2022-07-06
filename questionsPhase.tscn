@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://questionsPhase.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="questionLabel" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 313.0
+margin_bottom = 58.0
+rect_pivot_offset = Vector2( 26, 8 )
+autowrap = true
+
+[node name="bananasLabel" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 157.0
+margin_right = 172.0
+margin_bottom = 178.0
+rect_pivot_offset = Vector2( 26, 8 )
+text = "Bananas: "
+autowrap = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="alternative1" type="CheckBox" parent="Node2D"]
+margin_left = 4.0
+margin_top = 57.0
+margin_right = 28.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 12, 12 )
+
+[node name="alternative2" type="CheckBox" parent="Node2D"]
+margin_left = 4.0
+margin_top = 77.0
+margin_right = 28.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 12, 12 )
+
+[node name="alternative3" type="CheckBox" parent="Node2D"]
+margin_left = 4.0
+margin_top = 98.0
+margin_right = 28.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 12, 12 )
+
+[node name="alternative4" type="CheckBox" parent="Node2D"]
+margin_left = 4.0
+margin_top = 118.0
+margin_right = 28.0
+margin_bottom = 142.0
+rect_pivot_offset = Vector2( 12, 12 )
+
+[node name="tipButton" type="Button" parent="."]
+margin_left = 5.0
+margin_top = 155.0
+margin_right = 45.0
+margin_bottom = 175.0
+text = "Dica"
+
+[node name="answerButton" type="Button" parent="."]
+margin_left = 182.0
+margin_top = 155.0
+margin_right = 315.0
+margin_bottom = 175.0
+text = "Confirmar resposta"
+
+[connection signal="focus_entered" from="." to="." method="_on_Control_focus_entered"]
+[connection signal="toggled" from="Node2D/alternative1" to="." method="_on_alternative1_toggled"]
+[connection signal="toggled" from="Node2D/alternative2" to="." method="_on_alternative2_toggled"]
+[connection signal="toggled" from="Node2D/alternative3" to="." method="_on_alternative3_toggled"]
+[connection signal="toggled" from="Node2D/alternative4" to="." method="_on_alternative4_toggled"]
+[connection signal="button_down" from="tipButton" to="." method="_on_tipButton_button_down"]
+[connection signal="button_down" from="answerButton" to="." method="_on_answerButton_button_down"]

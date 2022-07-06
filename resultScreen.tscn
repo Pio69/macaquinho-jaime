@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://resultScreen.gd" type="Script" id=1]
+
+[node name="resultScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="correctAnswers1" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 310.0
+margin_bottom = 37.0
+text = "Você acertou X perguntas  nas 1ª faze
+Nota: X"
+autowrap = true
+
+[node name="correctAnswers2" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 42.0
+margin_right = 311.0
+margin_bottom = 74.0
+text = "Você acertou X perguntas  nas 2ª faze
+Nota: X"
+autowrap = true
+
+[node name="mediaLabel" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 82.0
+margin_right = 312.0
+margin_bottom = 114.0
+text = "Sua média foi X"
+autowrap = true
+
+[node name="resultLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 103.0
+margin_right = 313.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 68, 16 )
+text = "Você foi aprovado! Parabéns"
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 210.0
+margin_bottom = 172.0
+text = "Reiniciar jogo"
+
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
